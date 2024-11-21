@@ -4,56 +4,62 @@ Copyright © 2024 mozahzah. All rights reserved.
 Author: mozahzah 
 */
 
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 991;
 const mobileButton = document.getElementById("landing-page-button");
 const helloContainer= document.getElementById("hello-container");
 const portfolioButton= document.getElementById("portfolio-button");
-const wallpaper = document.getElementById("home-background-video");
-
-console.log($(document.getElementsByClassName("hover-text")));
-
-$(function()
-{
-    console.log("HEEE");
-    if (window.innerWidth < 991 || isMobile)
-    {
-        if (mobileButton)
-        {
-            mobileButton.style.zIndex = "1";
-            mobileButton.addEventListener("click", mobileLandingPage, false);
-        }
-    }
-
-    document.addEventListener("mousemove", move, false);
-});
+const backgroundVideos = document.getElementsByClassName("background-video");
 
 document.addEventListener('DOMContentLoaded', function () 
 {
-    if (portfolioButton) 
-    {
-        portfolioButton.addEventListener("click", switchToPortfolio, false);
-        SetupMobileButton();
-        SetupMobile();
+    // if (portfolioButton) 
+    // {
+    //     portfolioButton.addEventListener("click", switchToPortfolio, false);
+        
+    // }
 
-        window.addEventListener('resize', function () 
-        {
-            window.location.reload();
-            SetupMobileButton();
-            SetupMobile();
-        });
+    if (isMobile)
+    {
+        setupMobile()
     }
+    else
+    {
+        setupDesktop()
+    }
+
+    window.addEventListener('resize', onWindowResize);
+    
 });
 
-function move(mouseEvent)
+function onWindowResize() 
 {
-    if (wallpaper)
+    if (window.location)
     {
-        wallpaper.style.left = mouseEvent.clientX / 800 + "%";
-        wallpaper.style.top = mouseEvent.clientY / 800 + "%";
+        window.location.reload();
     }
 }
 
-function switchToPortfolio()
+function setupDesktop()
+{ 
+    document.addEventListener("mousemove", onMouseMove, false);
+}
+
+function onMouseMove(mouseEvent)
+{
+    if (backgroundVideos)
+    {
+        for (var backgroundVideo of backgroundVideos)
+        {
+            if (backgroundVideo instanceof HTMLElement)
+            {
+                backgroundVideo.style.left = 50 - mouseEvent.clientX / 800 + "%";
+                backgroundVideo.style.top = 50 - mouseEvent.clientY / 800 + "%";
+            }
+        }
+    }
+}
+
+function onPortfolioClicked()
 {
     if (helloContainer && mobileButton)
     {
@@ -63,7 +69,7 @@ function switchToPortfolio()
     }
 }
 
-function SetupMobile()
+function setupMobile()
 {
     if (mobileButton)
     {
@@ -94,10 +100,10 @@ function SetupMobile()
 
 const handleOrientationEvent = (frontToBack, leftToRight, rotateDegrees) => 
 {
-    if (wallpaper && frontToBack && leftToRight && rotateDegrees)
+    if (backgroundVideos && frontToBack && leftToRight && rotateDegrees)
     {
-        wallpaper.left += -leftToRight + "%";
-        wallpaper.top += -frontToBack + "%";
+        backgroundVideos.left += -leftToRight + "%";
+        backgroundVideos.top += -frontToBack + "%";
     }
 };
 
