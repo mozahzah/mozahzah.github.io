@@ -69,7 +69,9 @@ body
 
 .intro-text 
 {
-    display:block; color:#c5c5c5;
+    display:block; 
+    color:#c5c5c5;
+    text-align: center;
 }
 .hover-text 
 {
