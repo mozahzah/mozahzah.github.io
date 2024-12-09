@@ -6,13 +6,38 @@ Author: mozahzah
 
 * /* Global */
 {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
+    font-weight: 400;
     font-style: normal;
-    letter-spacing: 5px;
-    color: #c5c5c5;
+    letter-spacing: 2px;
+    font-size: 16px;
+    color: #e0e0e0e0;
     word-wrap: break-word;
     overflow-wrap: break-word;
+}
+
+h1
+{
+  padding: 0;
+  margin: 0;
+  font-size: 42px;
+  font-weight: 600;
+}
+
+h2
+{
+  padding: 0;
+  margin: 0;
+  font-size: 28px;
+  font-weight: 200;
+}
+
+h3
+{
+  padding: 0;
+  margin: 0;
+  font-size: 22px;
 }
 
 body 
@@ -63,7 +88,7 @@ body
     flex-direction: column;
     align-items: start;
     padding-right: 10%;
-    gap: 50px;
+    gap: 10px;
 }
 
 .social-links,.flex-center {
@@ -116,6 +141,11 @@ body
   #github {
     fill: #333;
   }
+
+#projects-section
+{
+  margin-top: 50px;
+}
 
 .project-container 
 {
