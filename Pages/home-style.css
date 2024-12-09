@@ -15,6 +15,7 @@ Author: mozahzah
     color: #e0e0e0e0;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    scroll-behavior: smooth;
 }
 
 h1
@@ -29,7 +30,7 @@ h2
 {
   padding: 0;
   margin: 0;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 200;
 }
 
@@ -63,7 +64,7 @@ body
 
 #main-section
 {
-    margin-top: 12vh;
+    margin-top: 5%;
     display: flex;
     flex-direction: row;
     align-items: start;
@@ -81,6 +82,18 @@ body
     padding-left: 10%;
 }
 
+#main-nav
+{
+  margin-top: 10%;
+}
+
+#social-links
+{
+  margin-top: 75%;
+  display: flex;
+  flex-direction: row;
+}
+
 #content-section
 {
     width: 50%;
@@ -90,61 +103,95 @@ body
     padding-right: 10%;
     gap: 10px;
 }
+  
+ul 
+{
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add space between items */
+}
 
-.social-links,.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .social-btn {
-    cursor: pointer;
-    height: 50px;
-    width: 50px;
-    font-family: 'Titillium Web', sans-serif;
-    color: #333;
-    border-radius: 10px;
-    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
-    background: white;
-    margin: 5px;
-    transition: 0.3s;
-    justify-content: center;
-  }
-  
-  .social-btn svg {
-    height: 24px;
-    width: 24px;
-  }
-  
-  .social-btn span {
-    width: 0px;
-    overflow: hidden;
-    transition: 0.3s;
-    text-align: center;
-    margin-left: 5px;
-  }
-  
-  .social-btn:hover {
-    width: 150px;
-    border-radius: 5px;
-  }
-  
-  .social-btn:hover span {
-    padding: 2px;
-    width: 80px;
-  }
-  
-  #linkedin svg {
-    fill: #0e76a8;
-  }
-  
-  #github {
-    fill: #333;
-  }
+li 
+{
+  position: relative;
+}
+
+a 
+{
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Default text color */
+  font-size: 18px; /* Adjust text size */
+  font-weight: bold;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+a:hover 
+{
+  color: #ff0000; /* Highlight color on hover */
+}
+
+li span:first-child 
+{
+  display: block; /* Allow control of line styling */
+  width: 100%;
+  height: 2px; /* Thickness of the line */
+  background-color: #ff0000; /* Line color */
+  margin-bottom: 5px; /* Space between line and text */
+  transition: transform 0.3s ease; /* Smooth animation */
+  transform: scaleX(0); /* Start with hidden line */
+}
+
+a:hover span:first-child 
+{
+  transform: scaleX(1); /* Expand the line on hover */
+  transform-origin: left; /* Animate from left to right */
+}
+
+.social-btn 
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.05);
+  margin: 5px;
+  transition: 0.3s ease;
+}
+
+.social-btn svg 
+{
+  height: 24px;
+  width: 24px;
+}
+
+.social-btn:hover 
+{
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+
+#linkedin svg 
+{
+  fill: #0e76a8;
+}
+
+#github svg
+{
+  fill: #333;
+}
 
 #projects-section
 {
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .project-container 
@@ -159,7 +206,7 @@ body
 
 .project-container:hover 
 {
-  transform: scale(1.04); /* Scale the whole container */
+  transform: scale(1.04);
   cursor: pointer;
 }
 
@@ -168,14 +215,12 @@ body
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    /* background-color: #d70e0e76; */
+    gap: 10px;
 }
 
 .sub-section-sidebar
 {
   width: 30%;
-  /* background-color: #0e76a8; */
 }
 
 .sub-section-text-block
