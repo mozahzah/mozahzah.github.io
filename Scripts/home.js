@@ -20,6 +20,13 @@ document.addEventListener('DOMContentLoaded', function ()
 
     window.addEventListener('resize', onWindowResize);
     
+    const iframe = document.getElementById('home-background-video');
+    const player = new Vimeo.Player(iframe);
+    player.on('play', function () 
+    {
+        const loader = document.getElementById('loader-container');
+        loader.classList.add('hidden');
+    }); 
 });
 
 function onWindowResize() 

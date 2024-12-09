@@ -11,8 +11,20 @@ Author: mozahzah
     <link rel="stylesheet" href="home-style.css">
   </head>
   <body id="home-body">
-    <iframe id="home-background-video" class="background-video" src="https://player.vimeo.com/video/541097000?muted=1&autoplay=1&loop=1&background=1&controls=0" 
-            frameborder="0" allow="autoplay; fullscreen; picture-in-picture">
+    <div id="loader-container">
+      <div id="loader">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+
+    <iframe 
+      id="home-background-video" 
+      class="background-video" 
+      src="https://player.vimeo.com/video/541097000?muted=1&autoplay=1&loop=1&background=1&controls=0" 
+      frameborder="0" 
+      allow="autoplay; fullscreen; picture-in-picture">
     </iframe>
     <div id="main-section">
       <div id="fixed-info-section">
@@ -62,6 +74,7 @@ Author: mozahzah
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <script type="module" src="../Scripts/home.js"></script>
   </body>
 </html>
