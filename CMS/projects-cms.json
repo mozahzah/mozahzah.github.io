@@ -1,26 +1,20 @@
 [
     {
-      "title": "IEFxRack",
-      "description": "IEMidi is a simple, open-source MIDI editor that leverages RtMidi for its MIDI message handling. The editor is designed to map any MIDI message to various actions such as volume control, mute, console commands or opening files. It also includes a MIDI logger for monitoring MIDI messages in real-time.",
-      "image": "/Resources/IEMidi-Demo-Editor.png",
-      "link": "https://github.com/mozahzah/IEFxRack"
-    },
-    {
       "title": "IEMidi",
       "description": "IEMidi is a simple, open-source MIDI editor that leverages RtMidi for its MIDI message handling. The editor is designed to map any MIDI message to various actions such as volume control, mute, console commands or opening files. It also includes a MIDI logger for monitoring MIDI messages in real-time.",
       "image": "/Resources/IEMidi-Demo-Editor.png",
       "link": "https://github.com/mozahzah/IEMidi"
     },
     {
-      "title": "IECore",
-      "description": "IECore is a open-source library designed for Windows and macOS applications that leverages ImGui as its user interface. The library includes an abstracted renderer class and robust logging, as well as useful utilities and ImGui extension logic. Currently, only Vulkan is implemented as a rendering backend, but support for additional backends will be added in the future.",
-      "image": "/Resources/IEMidi-Demo-Editor.png",
-      "link": "https://github.com/mozahzah/IECore"
+      "title": "Interactive Echoes",
+      "description": "Repositories of apps and libraries under the Interactive Echoes (IE) brand, offering audio and program tools for various needs.",
+      "image": "/Resources/IECore.png",
+      "link": "https://github.com/stars/mozahzah/lists/interactive-echoes"
     },
     {
       "title": "3D Audio and Gameplay Programming",
-      "description": "A series of audio enhancement and gameplay mechanics programmed in UE5 and C++. This sandbox project comes with a video explanation of each technology along with the C++ code.",
-      "image": "/Resources/IEMidi-Demo-Editor.png",
-      "link": "https://vimeo.com/user/136159491/folder/22462270?isPrivate=false"
+      "description": "A series of audio enhancements and gameplay mechanics programmed in UE5 and C++. This sandbox project includes a video explanation of each feature, accompanied by the corresponding C++ code.",
+      "image": "/Resources/3D-Audio-Gameplay.png",
+      "link": "https://vimeo.com/showcase/11491529?share=copy"
     }
 ]
