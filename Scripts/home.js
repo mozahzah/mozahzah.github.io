@@ -5,7 +5,8 @@ Author: mozahzah
 */
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 991;
-const backgroundVideos = document.getElementsByClassName("background-video");
+const homeBackgroundVideo = document.getElementById("home-background-video");
+const spotlight = document.getElementById("spotlight");
 
 document.addEventListener('DOMContentLoaded', function () 
 {
@@ -44,16 +45,16 @@ function setupDesktop()
 
 function onMouseMove(mouseEvent)
 {
-    if (backgroundVideos)
+    if (homeBackgroundVideo)
     {
-        for (var backgroundVideo of backgroundVideos)
-        {
-            if (backgroundVideo instanceof HTMLElement)
-            {
-                backgroundVideo.style.left = 50 - mouseEvent.clientX / 200 + "%";
-                backgroundVideo.style.top = 50 - mouseEvent.clientY / 200 + "%";
-            }
-        }
+        homeBackgroundVideo.style.left = 50 - mouseEvent.clientX / 200 + "%";
+        homeBackgroundVideo.style.top = 50 - mouseEvent.clientY / 200 + "%";
+    }
+
+    if (spotlight)
+    {
+        spotlight.style.left = `${mouseEvent.pageX}px`;
+        spotlight.style.top = `${mouseEvent.pageY}px`;
     }
 }
 
@@ -70,10 +71,10 @@ function setupMobile()
 
 const handleOrientationEvent = (frontToBack, leftToRight, rotateDegrees) => 
 {
-    if (backgroundVideos && frontToBack && leftToRight && rotateDegrees)
+    if (homeBackgroundVideo && frontToBack && leftToRight && rotateDegrees)
     {
-        backgroundVideos.left += -leftToRight + "%";
-        backgroundVideos.top += -frontToBack + "%";
+        homeBackgroundVideo.left += -leftToRight + "%";
+        homeBackgroundVideo.top += -frontToBack + "%";
     }
 };
 
