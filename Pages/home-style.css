@@ -239,16 +239,7 @@ body
   font-size: 18px;
   font-weight: 500;
   font-family: "Space Grotesk", sans-serif;
-}
-
-.side-nav-text:hover
-{
-  color: var(--primary-font-color);
-}
-
-.side-nav-text:active
-{
-  color: var(--primary-font-color);
+  transition: all var(--animation-time) ease;
 }
 
 .side-nav-list-item a span:last-child
@@ -266,6 +257,22 @@ body
 {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.side-nav-list-item a:hover .side-nav-text
+{
+  color: var(--primary-font-color);
+}
+
+.side-nav-list-item a.active span:last-child 
+{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.side-nav-list-item a.active .side-nav-text
+{
+  color: var(--primary-font-color);
 }
 
 

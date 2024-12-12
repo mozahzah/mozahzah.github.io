@@ -8,8 +8,38 @@ const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window
 const homeBackgroundVideo = document.getElementById("home-background-video");
 const spotlight = document.getElementById("spotlight");
 
+function updateActiveNavLink() 
+{
+    const scrollPosition = window.scrollY + 90;
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+
+    navLinks.forEach(link => 
+    {
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) 
+        {
+            const sectionTop = targetElement.offsetTop;
+            const sectionBottom = sectionTop + targetElement.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) 
+            {
+                link.classList.add('active');
+            }
+            else 
+            {
+                link.classList.remove('active');
+            }
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveNavLink);
+
 document.addEventListener('DOMContentLoaded', function () 
 {
+    updateActiveNavLink();
     if (isMobile)
     {
         setupMobile()
@@ -59,7 +89,7 @@ function setupDesktop()
                 behavior: 'smooth'
             });
         });
-      });
+    });
 }
 
 function onMouseMove(mouseEvent)
