@@ -6,40 +6,9 @@ Author: mozahzah
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 991;
 const homeBackgroundVideo = document.getElementById("home-background-video");
-const spotlight = document.getElementById("spotlight");
-
-function updateActiveNavLink() 
-{
-    const scrollPosition = window.scrollY + 90;
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-
-    navLinks.forEach(link => 
-    {
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) 
-        {
-            const sectionTop = targetElement.offsetTop;
-            const sectionBottom = sectionTop + targetElement.offsetHeight;
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) 
-            {
-                link.classList.add('active');
-            }
-            else 
-            {
-                link.classList.remove('active');
-            }
-        }
-    });
-}
-
-window.addEventListener('scroll', updateActiveNavLink);
 
 document.addEventListener('DOMContentLoaded', function () 
 {
-    updateActiveNavLink();
     if (isMobile)
     {
         setupMobile()
@@ -50,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function ()
     }
 
     window.addEventListener('resize', onWindowResize);
+    window.addEventListener('scroll', onWindowScroll);
     
     const iframe = document.getElementById('home-background-video');
     const player = new Vimeo.Player(iframe);
@@ -58,15 +28,13 @@ document.addEventListener('DOMContentLoaded', function ()
         const loader = document.getElementById('loader-container');
         loader.classList.add('hidden');
     }); 
+
+    updateActiveNavLink();
 });
 
-function onWindowResize() 
-{
-    if (window.location)
-    {
-        window.location.reload();
-    }
-}
+
+/* Setup */
+
 
 function setupDesktop()
 { 
@@ -92,21 +60,6 @@ function setupDesktop()
     });
 }
 
-function onMouseMove(mouseEvent)
-{
-    if (homeBackgroundVideo)
-    {
-        homeBackgroundVideo.style.left = 50 - mouseEvent.clientX / 500 + "%";
-        homeBackgroundVideo.style.top = 50 - mouseEvent.clientY / 500 + "%";
-    }
-
-    if (spotlight)
-    {
-        spotlight.style.left = `${mouseEvent.pageX}px`;
-        spotlight.style.top = `${mouseEvent.pageY}px`;
-    }
-}
-
 function setupMobile()
 {
     if ('DeviceOrientationEvent' in window && isMobile) 
@@ -118,6 +71,64 @@ function setupMobile()
     }
 }
 
+
+/* Events */
+
+
+function onWindowResize() 
+{
+    if (window.location)
+    {
+        window.location.reload();
+    }
+}
+
+function onWindowScroll() 
+{
+    updateActiveNavLink();
+}
+
+function onMouseMove(mouseEvent)
+{
+    if (homeBackgroundVideo)
+    {
+        homeBackgroundVideo.style.left = 50 - mouseEvent.clientX / 500 + "%";
+        homeBackgroundVideo.style.top = 50 - mouseEvent.clientY / 500 + "%";
+    }
+}
+
+
+/* Helpers */
+
+
+function updateActiveNavLink() 
+{
+    const scrollPosition = window.scrollY;
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+
+    let bIsOneNavActive = false;
+    navLinks.forEach(link => 
+    {
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) 
+        {
+            const sectionTop = targetElement.offsetTop;
+
+            if (scrollPosition <= sectionTop && !bIsOneNavActive) 
+            {
+                link.classList.add('active');
+                bIsOneNavActive = true;
+            }
+            else
+            {
+                link.classList.remove('active');
+            }
+        }
+    });
+}
+
 const handleOrientationEvent = (frontToBack, leftToRight, rotateDegrees) => 
 {
     if (homeBackgroundVideo && frontToBack && leftToRight && rotateDegrees)
@@ -126,6 +137,10 @@ const handleOrientationEvent = (frontToBack, leftToRight, rotateDegrees) =>
         homeBackgroundVideo.top += -frontToBack + "%";
     }
 };
+
+
+/* Content loading */
+
 
 function loadProjectsJsonFile() 
 {
@@ -137,24 +152,45 @@ function loadProjectsJsonFile()
     {
         const data = JSON.parse(xhr.responseText);
         const portfolioBody = document.getElementById('projects-section');
-
+        
+        let i = 0;
         data.forEach(projectItem => 
         {
             portfolioBody.innerHTML += `
-            <div onclick="window.open('${projectItem.link}', '_blank')" class="project-container content-element">
-                <div class="sub-section-sidebar">
-                    <div class="image-wrapper">
-                        <img src="../CMS/${projectItem.image}" class="project-image"></img>
-                    </div>
+            <div onclick="window.open('${projectItem.link}', '_blank')" class="project-container">
+                <div class="project-image-wrapper">
+                    <img src="../CMS/${projectItem.image}" class="project-image"></img>
                 </div>
-                <div class="sub-section-text-block">
+                <div class="project-text-section">
                     <h3 class="project-title">${projectItem.title}</h3>
                     <p class="project-description">${projectItem.description}</p>
                 </div>
             </div>
             `;
         });
+
+        const projectContainers = document.getElementsByClassName("project-container");
+        if (projectContainers) 
+        {
+            for (let i = 0; i < projectContainers.length; i++) 
+            {
+                const projectItem = projectContainers.item(i);
+                const imageWrapper = projectItem.querySelector(".project-image-wrapper");
+                const textSection = projectItem.querySelector(".project-text-section");
+                if (i % 2 !== 0) 
+                {
+                    projectItem.style.flexDirection = "row-reverse";
+                    imageWrapper.classList.add("add-right-border-radius");
+                    textSection.classList.add("add-left-border-radius");
+                }
+                else
+                {
+                    projectItem.style.flexDirection = "row";
+                    imageWrapper.classList.add("add-left-border-radius");
+                    textSection.classList.add("add-right-border-radius");
+                }
+            }
+        }
     }
 }
-
 loadProjectsJsonFile();
