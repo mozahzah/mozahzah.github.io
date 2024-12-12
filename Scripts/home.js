@@ -41,14 +41,33 @@ function onWindowResize()
 function setupDesktop()
 { 
     document.addEventListener("mousemove", onMouseMove, false);
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => 
+    {
+        anchor.addEventListener('click', function (e) 
+        {
+            e.preventDefault();
+      
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+      
+            const targetPosition = targetElement.offsetTop - 100;
+      
+            window.scrollTo(
+            {
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        });
+      });
 }
 
 function onMouseMove(mouseEvent)
 {
     if (homeBackgroundVideo)
     {
-        homeBackgroundVideo.style.left = 50 - mouseEvent.clientX / 200 + "%";
-        homeBackgroundVideo.style.top = 50 - mouseEvent.clientY / 200 + "%";
+        homeBackgroundVideo.style.left = 50 - mouseEvent.clientX / 500 + "%";
+        homeBackgroundVideo.style.top = 50 - mouseEvent.clientY / 500 + "%";
     }
 
     if (spotlight)
@@ -92,7 +111,7 @@ function loadProjectsJsonFile()
         data.forEach(projectItem => 
         {
             portfolioBody.innerHTML += `
-            <div onclick="window.open('${projectItem.link}', '_blank')" class="project-container">
+            <div onclick="window.open('${projectItem.link}', '_blank')" class="project-container content-element">
                 <div class="sub-section-sidebar">
                     <div class="image-wrapper">
                         <img src="../CMS/${projectItem.image}" class="project-image"></img>
