@@ -51,7 +51,7 @@ function setupDesktop()
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
       
-            const targetPosition = targetElement.offsetTop - 100;
+            const targetPosition = targetElement.offsetTop - 90;
       
             window.scrollTo(
             {
