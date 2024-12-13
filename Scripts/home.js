@@ -65,7 +65,7 @@ function setupDesktop()
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
       
-            const targetPosition = targetElement.offsetTop - 90;
+            const targetPosition = targetElement.offsetTop - 115;
       
             window.scrollTo(
             {
@@ -84,6 +84,25 @@ function setupMobile()
         {
             handleOrientationEvent(event.beta, event.gamma, event.alpha);
         }, true);
+    }
+
+    const fixedInfoSection = document.getElementById("fixed-info-section");
+    if (fixedInfoSection)
+    {
+        fixedInfoSection.style.flexDirection = 'row';
+        fixedInfoSection.style.position = 'static';
+    }
+
+    const mainSection = document.getElementById("main-section");
+    if (mainSection)
+    {
+        mainSection.style.flexDirection = 'column';
+    }
+
+    const contentSection = document.getElementById("content-section");
+    if (contentSection)
+    {
+        contentSection.style.width = '100%';
     }
 }
 
@@ -108,8 +127,8 @@ function onMouseMove(mouseEvent)
 {
     if (homeBackgroundVideo)
     {
-        homeBackgroundVideo.style.left = 50 - mouseEvent.clientX / 400 + "%";
-        homeBackgroundVideo.style.top = 50 - mouseEvent.clientY / 400 + "%";
+        homeBackgroundVideo.style.left = 50 - mouseEvent.clientX / 450 + "%";
+        homeBackgroundVideo.style.top = 50 - mouseEvent.clientY / 450 + "%";
     }
 }
 
@@ -119,32 +138,31 @@ function onMouseMove(mouseEvent)
 
 function updateActiveNavLink() 
 {
-    const scrollPosition = window.scrollY + window.innerHeight / 2;
     const navLinks = document.querySelectorAll('a[href^="#"]');
-    let activeLinkFound = false;
+    const scrollPosition = window.scrollY + 100;
+    let activeLink = null;
+    let closestDistance = Infinity;
 
     navLinks.forEach(link => 
     {
         const targetId = link.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
-
+        
         if (targetElement) 
         {
-            const sectionTop = targetElement.offsetTop;
-            const sectionBottom = sectionTop + targetElement.offsetHeight;
-
-            link.classList.remove('active');
-            if(scrollPosition >= sectionTop && scrollPosition < sectionBottom && !activeLinkFound)
+            const distance = Math.abs(targetElement.offsetTop - scrollPosition);
+            if (distance < closestDistance) 
             {
-                link.classList.add('active');
-                activeLinkFound = true;
+                closestDistance = distance;
+                activeLink = link;
             }
         }
+        link.classList.remove('active');
     });
 
-    if (!activeLinkFound) 
+    if (activeLink) 
     {
-        navLinks.forEach(link => link.classList.remove('active'));
+        activeLink.classList.add('active');
     }
 }
 
@@ -172,7 +190,6 @@ function loadProjectsJsonFile()
         const data = JSON.parse(xhr.responseText);
         const portfolioBody = document.getElementById('projects-section');
         
-        let i = 0;
         data.forEach(projectItem => 
         {
             let toolsDiv = '<div class="project-tools">';
@@ -185,7 +202,7 @@ function loadProjectsJsonFile()
             portfolioBody.innerHTML += `
             <div class="project-container">
                 <div class="project-image-wrapper" onclick="window.open('${projectItem.link}', '_blank')">
-                    <img src="../CMS/${projectItem.image}" class="project-image"></img>
+                    <img src="../CMS/${projectItem.image}" class="project-image" style="width: ${projectItem.zoom}%"></img>
                 </div>
                 <div class="project-text-section">
                     <h3 class="project-title">${projectItem.title}</h3>
