@@ -193,7 +193,7 @@ body
 
 .project-text-section
 {
-  width: 60%;
+  width: 65%;
   height: 100%;
   padding-left: 3%;
   padding-right: 3%;
@@ -238,7 +238,7 @@ body
 
 .project-image-wrapper
 {
-  width: 40%;
+  width: 35%;
   height: 100%;
   overflow: hidden;
   transition: all var(--animation-time) ease;
