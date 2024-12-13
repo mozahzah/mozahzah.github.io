@@ -17,7 +17,7 @@ Author: mozahzah
   --red: #E50914;
 
   /* Fx */
-  --white-box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  --white-box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   --border-radius: 30px;
 }
 
@@ -57,7 +57,7 @@ h2
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
   color: var(--secondary-color);
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
   padding: 0;
   margin: 0;
@@ -74,6 +74,12 @@ h3
   padding: 0;
   margin: 0;
   font-size: 26px;
+}
+
+p
+{
+  margin-top: 0;
+  color: rgb(185, 185, 185);
 }
 
 
@@ -93,12 +99,13 @@ body
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-55%, -50%);
   width: 110vw;   
   height: 110vh;
   pointer-events: none;
   opacity: 10%;
   z-index: -1;
+  overflow: hidden;
 }
 
 
@@ -112,7 +119,7 @@ body
     flex-direction: row;
     align-items: start;
     justify-content: end;
-    padding-right: 10%;
+    padding-right: 5%;
 }
 
 #fixed-info-section
@@ -136,6 +143,7 @@ body
 #content-section
 {
     width: 60%;
+    margin-top: 1%;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -148,7 +156,7 @@ body
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 10vh;
+  gap: 5vh;
 }
 
 #projects-section
@@ -156,7 +164,7 @@ body
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 10vh;
+  gap: 5vh;
 }
 
 .project-container 
@@ -167,20 +175,19 @@ body
   padding: 0% 0% 0% 0%;
   transition: all var(--animation-time) ease;
   width: 100%;
-  height: 32vh;
+  height: 36vh;
   gap: 0.4vw;
   border-radius: var(--border-radius);
 }
 
 .project-container:hover 
 {
-  transform: scale(1.04);
-  cursor: pointer;
   box-shadow: var(--white-box-shadow);
   .project-image-wrapper
   {
     transform: scale(1.1);
     border-radius: var(--border-radius);
+    cursor: pointer;
   }
 }
 
@@ -202,6 +209,31 @@ body
 .project-title
 {
   margin-top: 5%;
+  margin-bottom: 2%;
+  font-size: 22px;
+}
+
+.project-tools
+{
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+}
+
+.project-tools-item
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  border-radius: 9999px;
+  border: white;
+  border-style: solid;
+  border-width: 1px;
+  opacity: 0.5;
 }
 
 .project-image-wrapper
@@ -348,7 +380,7 @@ body
 
 .social-btn:hover 
 {
-  transform: scale(1.1);
+  transform: scale(1.2);
   border-radius: 5px;
 }
 

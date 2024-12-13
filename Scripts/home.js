@@ -21,13 +21,29 @@ document.addEventListener('DOMContentLoaded', function ()
     window.addEventListener('resize', onWindowResize);
     window.addEventListener('scroll', onWindowScroll);
     
+    let errorPlayingVideo = true;
     const iframe = document.getElementById('home-background-video');
-    const player = new Vimeo.Player(iframe);
-    player.on('play', function () 
+    const loader = document.getElementById('loader-container');
+    if (iframe)
     {
-        const loader = document.getElementById('loader-container');
+        const player = new Vimeo.Player(iframe);
+        if (player)
+        {
+            errorPlayingVideo = false;
+            player.on('play', function () 
+            {
+                if (loader)
+                {
+                    loader.classList.add('hidden');
+                }
+            });
+        }
+    }
+    
+    if (errorPlayingVideo && loader)
+    {
         loader.classList.add('hidden');
-    }); 
+    }
 
     updateActiveNavLink();
 });
@@ -92,8 +108,8 @@ function onMouseMove(mouseEvent)
 {
     if (homeBackgroundVideo)
     {
-        homeBackgroundVideo.style.left = 50 - mouseEvent.clientX / 500 + "%";
-        homeBackgroundVideo.style.top = 50 - mouseEvent.clientY / 500 + "%";
+        homeBackgroundVideo.style.left = 50 - mouseEvent.clientX / 400 + "%";
+        homeBackgroundVideo.style.top = 50 - mouseEvent.clientY / 400 + "%";
     }
 }
 
@@ -103,10 +119,10 @@ function onMouseMove(mouseEvent)
 
 function updateActiveNavLink() 
 {
-    const scrollPosition = window.scrollY;
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
     const navLinks = document.querySelectorAll('a[href^="#"]');
+    let activeLinkFound = false;
 
-    let bIsOneNavActive = false;
     navLinks.forEach(link => 
     {
         const targetId = link.getAttribute('href').substring(1);
@@ -115,18 +131,21 @@ function updateActiveNavLink()
         if (targetElement) 
         {
             const sectionTop = targetElement.offsetTop;
+            const sectionBottom = sectionTop + targetElement.offsetHeight;
 
-            if (scrollPosition <= sectionTop && !bIsOneNavActive) 
+            link.classList.remove('active');
+            if(scrollPosition >= sectionTop && scrollPosition < sectionBottom && !activeLinkFound)
             {
                 link.classList.add('active');
-                bIsOneNavActive = true;
-            }
-            else
-            {
-                link.classList.remove('active');
+                activeLinkFound = true;
             }
         }
     });
+
+    if (!activeLinkFound) 
+    {
+        navLinks.forEach(link => link.classList.remove('active'));
+    }
 }
 
 const handleOrientationEvent = (frontToBack, leftToRight, rotateDegrees) => 
@@ -156,14 +175,22 @@ function loadProjectsJsonFile()
         let i = 0;
         data.forEach(projectItem => 
         {
+            let toolsDiv = '<div class="project-tools">';
+            projectItem.tools.forEach(tool => 
+            {
+                toolsDiv += `<a class="project-tools-item">${tool}</a>`;
+            });
+            toolsDiv += '</div>';
+
             portfolioBody.innerHTML += `
-            <div onclick="window.open('${projectItem.link}', '_blank')" class="project-container">
-                <div class="project-image-wrapper">
+            <div class="project-container">
+                <div class="project-image-wrapper" onclick="window.open('${projectItem.link}', '_blank')">
                     <img src="../CMS/${projectItem.image}" class="project-image"></img>
                 </div>
                 <div class="project-text-section">
                     <h3 class="project-title">${projectItem.title}</h3>
                     <p class="project-description">${projectItem.description}</p>
+                    ${toolsDiv}
                 </div>
             </div>
             `;
