@@ -193,6 +193,11 @@ body
     border-radius: var(--border-radius);
     cursor: pointer;
   }
+
+  .arrow
+  {
+    opacity: 0.7;
+  }
 }
 
 .project-text-section
@@ -242,6 +247,7 @@ body
 
 .project-image-wrapper
 {
+  position: relative;
   width: 35%;
   height: 100%;
   overflow: hidden;
@@ -249,6 +255,17 @@ body
   border:rgb(0, 0, 0);
   border-style: solid;
   border-width: 1px;
+}
+
+.arrow
+{
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  transform: rotate(-45deg);
+  right: 10px;
+  transition: all var(--animation-time) ease;
+  opacity: 0;
 }
 
 .project-image-wrapper img 

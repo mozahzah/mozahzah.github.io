@@ -182,6 +182,7 @@ function loadProjectsJsonFile()
             portfolioBody.innerHTML += `
             <div class="project-container">
                 <div class="project-image-wrapper" onclick="window.open('${projectItem.link}', '_blank')">
+                    <a class="arrow">→</a>
                     <img src="../CMS/${projectItem.image}" class="project-image" style="width: ${projectItem.zoom}%"></img>
                 </div>
                 <div class="project-text-section">
