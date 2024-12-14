@@ -1,0 +1,46 @@
+[
+  {
+    "title": "IEFxRack",
+    "description": "IEFxRack is IE’s cross-platform virtual module FX rack. A audio processing tool designed for both Windows and macOS. It offers a flexible, modular environment for creating and manipulating audio effects, utilizing the JUCE library for its robust audio framework and seamless integration across platforms.",
+    "image": "/Resources/IEFxRack.jpg",
+    "zoom": 120,
+    "link": "https://github.com/mozahzah/IEFxRack",
+    "tools":
+    [
+      "C++", "CMake", "JUCE"
+    ]
+  },
+  {
+    "title": "IEMidi",
+    "description": "IEMidi is a simple, open-source MIDI editor that leverages RtMidi for its MIDI message handling. The editor is designed to map any MIDI message to various actions such as volume control, mute, console commands or opening files. It also includes a MIDI logger for monitoring MIDI messages in real-time.",
+    "image": "/Resources/IEMidi.jpg",
+    "zoom": 120,
+    "link": "https://github.com/mozahzah/IEMidi",
+    "tools":
+    [
+      "C++", "CMake", "rtmidi"
+    ]
+  },
+  {
+    "title": "IECore",
+    "description": "IECore is an open-source library designed for Windows and macOS, leveraging ImGui as its user interface. It serves as the core framework for all applications under the Interactive Echoes (IE) brand, offering a plug-and-play setup with pre-configured entry points, making it simple to start developping C++ applications.",
+    "image": "/Resources/IECore.jpg",
+    "zoom": 120,
+    "link": "https://github.com/mozahzah/IECore",
+    "tools":
+    [
+      "C++", "CMake", "imgui"
+    ]
+  },
+  {
+    "title": "3D Audio and Gameplay Programming",
+    "description": "A series of audio enhancements and gameplay mechanics programmed in UE5 and C++. This sandbox project includes a video explanation of each feature, accompanied by the corresponding C++ code.",
+    "image": "/Resources/3D-Audio-Gameplay.png",
+    "zoom": 150,
+    "link": "https://vimeo.com/showcase/11491529?share=copy",
+    "tools":
+    [
+      "C++", "UE5"
+    ]
+  }
+]

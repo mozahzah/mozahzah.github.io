@@ -4,85 +4,80 @@ Copyright © 2024 mozahzah. All rights reserved.
 Author: mozahzah 
 */
 
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-const mobileButton = document.getElementById("landing-page-button");
-const helloContainer= document.getElementById("hello-container");
-const portfolioButton= document.getElementById("portfolio-button");
-const wallpaper = document.getElementById("home-background-video");
-
-console.log($(document.getElementsByClassName("hover-text")));
-
-$(function()
-{
-    console.log("HEEE");
-    if (window.innerWidth < 991 || isMobile)
-    {
-        if (mobileButton)
-        {
-            mobileButton.style.zIndex = "1";
-            mobileButton.addEventListener("click", mobileLandingPage, false);
-        }
-    }
-
-    document.addEventListener("mousemove", move, false);
-});
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 991;
+const homeBackgroundVideo = document.getElementById("home-background-video");
 
 document.addEventListener('DOMContentLoaded', function () 
 {
-    if (portfolioButton) 
+    if (isMobile)
     {
-        portfolioButton.addEventListener("click", switchToPortfolio, false);
-        SetupMobileButton();
-        SetupMobile();
-
-        window.addEventListener('resize', function () 
-        {
-            window.location.reload();
-            SetupMobileButton();
-            SetupMobile();
-        });
+        setupMobile()
     }
+    else
+    {
+        setupDesktop()
+    }
+
+    window.addEventListener('resize', onWindowResize);
+    window.addEventListener('scroll', onWindowScroll);
+    
+    let errorPlayingVideo = true;
+    const iframe = document.getElementById('home-background-video');
+    const loader = document.getElementById('loader-container');
+    if (iframe)
+    {
+        const player = new Vimeo.Player(iframe);
+        if (player)
+        {
+            errorPlayingVideo = false;
+            player.on('play', function () 
+            {
+                if (loader)
+                {
+                    loader.classList.add('hidden');
+                }
+            });
+        }
+    }
+    
+    if (errorPlayingVideo && loader)
+    {
+        loader.classList.add('hidden');
+    }
+
+    updateActiveNavLink();
 });
 
-function move(mouseEvent)
-{
-    if (wallpaper)
-    {
-        wallpaper.style.left = mouseEvent.clientX / 800 + "%";
-        wallpaper.style.top = mouseEvent.clientY / 800 + "%";
-    }
-}
 
-function switchToPortfolio()
-{
-    if (helloContainer && mobileButton)
-    {
-        helloContainer.style.zIndex = "-1";
-        mobileButton.removeEventListener("click", mobileLandingPage, false);
-        mobileButton.addEventListener("click", function () { location.reload(); }, false);
-    }
-}
+/* Setup */
 
-function SetupMobile()
-{
-    if (mobileButton)
+
+function setupDesktop()
+{ 
+    document.addEventListener("mousemove", onMouseMove, false);
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => 
     {
-        if (window.innerWidth < 991 || isMobile)
+        anchor.addEventListener('click', function (e) 
         {
-            if (mobileButton)
+            e.preventDefault();
+      
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+      
+            const targetPosition = targetElement.offsetTop - 115;
+      
+            window.scrollTo(
             {
-                mobileButton.style.zIndex = "1";
-                mobileButton.addEventListener("click", mobileLandingPage, false);
-                //document.getElementById("touch-anywhere").style.display = "block";
-            }
-        }
-        else 
-        {
-            mobileButton.style.zIndex = "-1";
-            mobileButton.removeEventListener("click", mobileLandingPage, false);
-        }
-    }
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        });
+    });
+}
 
+function setupMobile()
+{
     if ('DeviceOrientationEvent' in window && isMobile) 
     {
         window.addEventListener("deviceorientation", (event) => 
@@ -92,37 +87,135 @@ function SetupMobile()
     }
 }
 
+
+/* Events */
+
+
+function onWindowResize() 
+{
+    if (window.location)
+    {
+        window.location.reload();
+    }
+}
+
+function onWindowScroll() 
+{
+    updateActiveNavLink();
+}
+
+function onMouseMove(mouseEvent)
+{
+    if (homeBackgroundVideo)
+    {
+        homeBackgroundVideo.style.left = 50 - mouseEvent.clientX / 450 + "%";
+        homeBackgroundVideo.style.top = 50 - mouseEvent.clientY / 450 + "%";
+    }
+}
+
+
+/* Helpers */
+
+
+function updateActiveNavLink() 
+{
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    const scrollPosition = window.scrollY + 100;
+    let activeLink = null;
+    let closestDistance = Infinity;
+
+    navLinks.forEach(link => 
+    {
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) 
+        {
+            const distance = Math.abs(targetElement.offsetTop - scrollPosition);
+            if (distance < closestDistance) 
+            {
+                closestDistance = distance;
+                activeLink = link;
+            }
+        }
+        link.classList.remove('active');
+    });
+
+    if (activeLink) 
+    {
+        activeLink.classList.add('active');
+    }
+}
+
 const handleOrientationEvent = (frontToBack, leftToRight, rotateDegrees) => 
 {
-    if (wallpaper && frontToBack && leftToRight && rotateDegrees)
+    if (homeBackgroundVideo && frontToBack && leftToRight && rotateDegrees)
     {
-        wallpaper.left += -leftToRight + "%";
-        wallpaper.top += -frontToBack + "%";
+        homeBackgroundVideo.left += -leftToRight + "%";
+        homeBackgroundVideo.top += -frontToBack + "%";
     }
 };
 
-const hide = {opacity:0, left:0,}
-const show = {opacity:100, left:0,}
-var b = false;
 
-function mobileLandingPage()
+/* Content loading */
+
+
+function loadProjectsJsonFile() 
 {
-    if (mobileButton)
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '../CMS/projects-cms.json', false);
+    xhr.send();
+
+    if (xhr.status === 200)
     {
-        if (b === false)
+        const data = JSON.parse(xhr.responseText);
+        const portfolioBody = document.getElementById('projects-section');
+        
+        data.forEach(projectItem => 
         {
-            console.log("clicked");
-            $(document.getElementsByClassName("introText")).css(hide);
-            $(document.getElementsByClassName("hoverText")).css(show);
-            mobileButton.style.zIndex = "-1";
-            b = true;
-        }
-        else 
+            let toolsDiv = '<div class="project-tools">';
+            projectItem.tools.forEach(tool => 
+            {
+                toolsDiv += `<a class="project-tools-item">${tool}</a>`;
+            });
+            toolsDiv += '</div>';
+
+            portfolioBody.innerHTML += `
+            <div class="project-container">
+                <div class="project-image-wrapper" onclick="window.open('${projectItem.link}', '_blank')">
+                    <img src="../CMS/${projectItem.image}" class="project-image" style="width: ${projectItem.zoom}%"></img>
+                </div>
+                <div class="project-text-section">
+                    <h3 class="project-title">${projectItem.title}</h3>
+                    <p class="project-description">${projectItem.description}</p>
+                    ${toolsDiv}
+                </div>
+            </div>
+            `;
+        });
+
+        const projectContainers = document.getElementsByClassName("project-container");
+        if (projectContainers) 
         {
-            $(document.getElementsByClassName("introText")).css(show);
-            $(document.getElementsByClassName("hoverText")).css(hide);
-            mobileButton.style.zIndex = "1";
-            b = false;
+            for (let i = 0; i < projectContainers.length; i++) 
+            {
+                const projectItem = projectContainers.item(i);
+                const imageWrapper = projectItem.querySelector(".project-image-wrapper");
+                const textSection = projectItem.querySelector(".project-text-section");
+                if (i % 2 !== 0) 
+                {
+                    projectItem.style.flexDirection = "row-reverse";
+                    imageWrapper.classList.add("add-right-border-radius");
+                    textSection.classList.add("add-left-border-radius");
+                }
+                else
+                {
+                    projectItem.style.flexDirection = "row";
+                    imageWrapper.classList.add("add-left-border-radius");
+                    textSection.classList.add("add-right-border-radius");
+                }
+            }
         }
     }
 }
+loadProjectsJsonFile();
