@@ -4,7 +4,7 @@ Copyright © 2024 mozahzah. All rights reserved.
 Author: mozahzah 
 */
 
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 991;
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 const homeBackgroundVideo = document.getElementById("home-background-video");
 
 document.addEventListener('DOMContentLoaded', function () 
@@ -18,9 +18,6 @@ document.addEventListener('DOMContentLoaded', function ()
         setupDesktop()
     }
 
-    window.addEventListener('resize', onWindowResize);
-    window.addEventListener('scroll', onWindowScroll);
-    
     let errorPlayingVideo = true;
     const iframe = document.getElementById('home-background-video');
     const loader = document.getElementById('loader-container');
@@ -55,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function ()
 function setupDesktop()
 { 
     document.addEventListener("mousemove", onMouseMove, false);
+    window.addEventListener('resize', onWindowResize);
+    window.addEventListener('scroll', onWindowScroll);
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => 
     {
