@@ -502,7 +502,7 @@ body
   {
     padding-left: 5%;
     flex-direction: column;
-    gap: 60px;
+    gap: 40px;
   }
 
   #fixed-info-section
