@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function ()
         setupDesktop()
     }
 
+    window.addEventListener('scroll', onWindowScroll);
+
     let errorPlayingVideo = true;
     const iframe = document.getElementById('home-background-video');
     const loader = document.getElementById('loader-container');
@@ -52,8 +54,6 @@ document.addEventListener('DOMContentLoaded', function ()
 function setupDesktop()
 { 
     document.addEventListener("mousemove", onMouseMove, false);
-    window.addEventListener('resize', onWindowResize);
-    window.addEventListener('scroll', onWindowScroll);
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => 
     {
@@ -90,17 +90,16 @@ function setupMobile()
 /* Events */
 
 
-function onWindowResize() 
-{
-    if (window.location)
-    {
-        // window.location.reload();
-    }
-}
-
 function onWindowScroll() 
 {
-    updateActiveNavLink();
+    if (isMobile)
+    {
+        updateCenteredContainer();
+    }
+    else
+    {
+        updateActiveNavLink();
+    }
 }
 
 function onMouseMove(mouseEvent)
@@ -115,6 +114,37 @@ function onMouseMove(mouseEvent)
 
 /* Helpers */
 
+
+function getDistanceFromCenter(element) 
+{
+    const elementRect = element.getBoundingClientRect(); 
+    const elementCenter = elementRect.top + elementRect.height / 2;
+    const viewportCenter = window.innerHeight / 2;
+    return Math.abs(viewportCenter - elementCenter);
+}
+
+function updateCenteredContainer() 
+{
+    const projectContainers = document.querySelectorAll(".project-container");
+    let activeContainer = null;
+    let closestDistance = Infinity;
+
+    projectContainers.forEach(projectContainer => 
+    {
+        const distance = getDistanceFromCenter(projectContainer);
+        if (distance < closestDistance) 
+        { 
+            closestDistance = distance;
+            activeContainer = projectContainer;
+        }
+    });
+
+    projectContainers.forEach(container => container.classList.remove("project-container-hovered"));
+    if (activeContainer) 
+    {
+        activeContainer.classList.add("project-container-hovered");
+    }
+}
 
 function updateActiveNavLink() 
 {

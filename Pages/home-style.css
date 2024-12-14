@@ -184,6 +184,22 @@ body
   border-radius: var(--border-radius);
 }
 
+.project-container-hovered
+{
+  box-shadow: var(--white-box-shadow);
+  .project-image-wrapper
+  {
+    transform: scale(1.1);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+  }
+
+  .arrow
+  {
+    opacity: 0.7;
+  }
+}
+
 .project-container:hover 
 {
   box-shadow: var(--white-box-shadow);
