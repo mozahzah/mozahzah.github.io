@@ -94,7 +94,7 @@ function onWindowResize()
 {
     if (window.location)
     {
-        window.location.reload();
+        // window.location.reload();
     }
 }
 
