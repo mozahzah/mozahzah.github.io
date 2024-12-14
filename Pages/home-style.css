@@ -407,18 +407,53 @@ body
 /* Responsiveness */
 
 
-@media screen and (max-width: 3840px) 
+@media screen and (max-width: 900px) 
 {
+  *
+  {
+    font-size: 12px;
+  }
 
-}
-@media screen and (max-width: 2560px) 
-{
+  h1
+  {
+    font-size: 40px;
+  }
 
-}
+  h2
+  {
+    font-size: 22px;
+  }
 
-@media screen and (max-width: 600px) 
-{
+  h3
+  {
+    font-size: 22px;
+  }
 
+  #main-section
+  {
+    padding-left: 5%;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  #fixed-info-section
+  {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding-left: 0%;
+  }
+
+  .side-nav
+  {
+    display: none;
+  }
+
+  #content-section
+  {
+    width: 100%;
+  }
 }
 
 

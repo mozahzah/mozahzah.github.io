@@ -85,25 +85,6 @@ function setupMobile()
             handleOrientationEvent(event.beta, event.gamma, event.alpha);
         }, true);
     }
-
-    const fixedInfoSection = document.getElementById("fixed-info-section");
-    if (fixedInfoSection)
-    {
-        fixedInfoSection.style.flexDirection = 'row';
-        fixedInfoSection.style.position = 'static';
-    }
-
-    const mainSection = document.getElementById("main-section");
-    if (mainSection)
-    {
-        mainSection.style.flexDirection = 'column';
-    }
-
-    const contentSection = document.getElementById("content-section");
-    if (contentSection)
-    {
-        contentSection.style.width = '100%';
-    }
 }
 
 
