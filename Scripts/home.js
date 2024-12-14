@@ -5,17 +5,13 @@ Author: mozahzah
 */
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-const homeBackgroundVideo = document.getElementById("home-background-video");
+const homeBackgroundVideoContainer = document.getElementById("home-background-video-container");
 
 document.addEventListener('DOMContentLoaded', function () 
 {
-    if (isMobile)
+    if (!isMobile)
     {
-        setupMobile()
-    }
-    else
-    {
-        setupDesktop()
+        setupDesktop();
     }
 
     window.addEventListener('scroll', onWindowScroll);
@@ -75,17 +71,6 @@ function setupDesktop()
     });
 }
 
-function setupMobile()
-{
-    if ('DeviceOrientationEvent' in window && isMobile) 
-    {
-        window.addEventListener("deviceorientation", (event) => 
-        {
-            handleOrientationEvent(event.beta, event.gamma, event.alpha);
-        }, true);
-    }
-}
-
 
 /* Events */
 
@@ -104,10 +89,11 @@ function onWindowScroll()
 
 function onMouseMove(mouseEvent)
 {
-    if (homeBackgroundVideo)
+    if (homeBackgroundVideoContainer) 
     {
-        homeBackgroundVideo.style.left = 50 - mouseEvent.clientX / 450 + "%";
-        homeBackgroundVideo.style.top = 50 - mouseEvent.clientY / 450 + "%";
+        const offsetX = (mouseEvent.clientX / 400).toFixed(2);
+        const offsetY = (mouseEvent.clientY / 400).toFixed(2);
+        homeBackgroundVideoContainer.style.transform = `translate(-${offsetX}%, -${offsetY}%)`;
     }
 }
 
@@ -175,15 +161,6 @@ function updateActiveNavLink()
         activeLink.classList.add('active');
     }
 }
-
-const handleOrientationEvent = (frontToBack, leftToRight, rotateDegrees) => 
-{
-    if (homeBackgroundVideo && frontToBack && leftToRight && rotateDegrees)
-    {
-        homeBackgroundVideo.left += -leftToRight + "%";
-        homeBackgroundVideo.top += -frontToBack + "%";
-    }
-};
 
 
 /* Content loading */
