@@ -530,6 +530,11 @@ body
     width: 100%;
   }
 
+  .project-text-section
+  {
+    padding-left: 4%;
+  }
+
   .footer
   {
     height: 100px;
