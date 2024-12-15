@@ -99,8 +99,8 @@ body
   position: absolute;
   left: -10%;
   top: -10%;
-  height: 100%;
-  width: 100%;
+  height: 90%;
+  width: 90%;
   transition: all 0.4s linear;
   pointer-events: none;
   z-index: -1;
@@ -164,6 +164,7 @@ body
     align-items: start;
     justify-content: space-between;
     padding-left: 10%;
+    overflow: hidden;
 }
 
 
@@ -511,7 +512,7 @@ body
     flex-direction: row;
     align-items: center;
     width: 100%;
-    padding-left: 0%;
+    padding-left: 0;
   }
 
   #home-background-video-container
@@ -547,7 +548,7 @@ body
 
 #loader-container 
 {
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -557,6 +558,7 @@ body
   height: 100%;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
+  overflow: hidden;
 }
 
 #loader-container.hidden 
