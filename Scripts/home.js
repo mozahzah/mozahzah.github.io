@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function ()
     let errorPlayingVideo = true;
     const iframe = document.getElementById('home-background-video');
     const loader = document.getElementById('loader-container');
+    document.body.style.overflow = 'hidden';
     if (iframe)
     {
         const player = new Vimeo.Player(iframe);
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 if (loader)
                 {
                     loader.classList.add('hidden');
+                    document.body.style.overflow = 'visible';
                 }
             });
         }
@@ -38,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function ()
     if (errorPlayingVideo && loader)
     {
         loader.classList.add('hidden');
+        document.body.style.overflow = 'visible';
     }
 
     updateActiveNavLink();
