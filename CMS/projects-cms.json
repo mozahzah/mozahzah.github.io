@@ -1,16 +1,5 @@
 [
   {
-    "title": "IEFxRack",
-    "description": "IEFxRack is IE’s cross-platform virtual module FX rack for Windows and macOS. It provides a modular environment for creating and shaping sounds, using the JUCE library as its audio framework.",
-    "image": "/Resources/IEFxRack.jpg",
-    "zoom": 120,
-    "link": "https://github.com/mozahzah/IEFxRack",
-    "tools":
-    [
-      "C++", "CMake", "JUCE"
-    ]
-  },
-  {
     "title": "IEMidi",
     "description": "IEMidi is a simple, open-source MIDI editor that leverages RtMidi for its MIDI message handling. The editor is designed to map any MIDI message to various actions such as volume control, mute, console commands or opening files. It also includes a MIDI logger for monitoring MIDI messages in real-time.",
     "image": "/Resources/IEMidi.jpg",
@@ -19,6 +8,17 @@
     "tools":
     [
       "C++", "CMake", "rtmidi"
+    ]
+  },
+  {
+    "title": "3D Audio and Gameplay Programming",
+    "description": "A series of audio enhancements and gameplay mechanics programmed in UE5 and C++. This sandbox project includes a video explanation of each feature, accompanied by the corresponding C++ code.",
+    "image": "/Resources/3D-Audio-Gameplay.png",
+    "zoom": 150,
+    "link": "https://vimeo.com/showcase/11491529?share=copy",
+    "tools":
+    [
+      "C++", "UE5"
     ]
   },
   {
@@ -33,14 +33,14 @@
     ]
   },
   {
-    "title": "3D Audio and Gameplay Programming",
-    "description": "A series of audio enhancements and gameplay mechanics programmed in UE5 and C++. This sandbox project includes a video explanation of each feature, accompanied by the corresponding C++ code.",
-    "image": "/Resources/3D-Audio-Gameplay.png",
-    "zoom": 150,
-    "link": "https://vimeo.com/showcase/11491529?share=copy",
+    "title": "IEFxRack (Work in Progress)",
+    "description": "IEFxRack is IE’s cross-platform virtual module FX rack for Windows and macOS. It provides a modular environment for creating and shaping sounds, using the JUCE library as its audio framework.",
+    "image": "/Resources/IEFxRack.jpg",
+    "zoom": 120,
+    "link": "https://github.com/mozahzah/IEFxRack",
     "tools":
     [
-      "C++", "UE5"
+      "C++", "CMake", "JUCE"
     ]
   }
 ]
