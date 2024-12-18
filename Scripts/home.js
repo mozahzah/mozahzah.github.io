@@ -47,6 +47,14 @@ document.addEventListener('DOMContentLoaded', function ()
     {
         loader.classList.add('hidden');
         document.body.style.overflow = 'visible';
+        if (player.getPaused())
+        {
+            player.pause();
+            if (iframe)
+            {
+                iframe.style.display = 'none';
+            }
+        }
     }, 3000); 
 
     updateActiveNavLink();
