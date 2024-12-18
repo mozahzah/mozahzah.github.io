@@ -43,6 +43,12 @@ document.addEventListener('DOMContentLoaded', function ()
         document.body.style.overflow = 'visible';
     }
 
+    setTimeout(() => 
+    {
+        loader.classList.add('hidden');
+        document.body.style.overflow = 'visible';
+    }, 3000); 
+
     updateActiveNavLink();
 });
 
