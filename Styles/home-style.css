@@ -277,7 +277,7 @@ body
   align-items: start;
   flex-wrap:wrap;
   width: 100%;
-  gap: 5%;
+  gap: 3%;
 }
 
 .project-tools-item
