@@ -274,6 +274,9 @@ body
 {
   display: flex;
   flex-direction: row;
+  align-items: start;
+  flex-wrap:wrap;
+  width: 100%;
   gap: 5%;
 }
 
