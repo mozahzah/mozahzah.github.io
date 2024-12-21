@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function ()
         document.body.style.overflow = 'visible';
     }
 
+    const TIMEOUT_DURATION = 3000;
     setTimeout(() => 
     {
         loader.classList.add('hidden');
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 iframe.style.display = 'none';
             }
         }
-    }, 3000); 
+    }, TIMEOUT_DURATION); 
 
     updateActiveNavLink();
 });

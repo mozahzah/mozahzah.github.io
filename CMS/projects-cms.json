@@ -7,7 +7,7 @@
     "link": "https://github.com/mozahzah/IEMidi",
     "tools":
     [
-      "C++", "CMake", "rtmidi"
+      "C++", "CMake", "YAML", "rtmidi"
     ]
   },
   {
