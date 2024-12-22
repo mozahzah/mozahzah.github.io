@@ -504,7 +504,8 @@ body
 
   #main-section
   {
-    padding-left: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
     flex-direction: column;
     gap: 40px;
   }
