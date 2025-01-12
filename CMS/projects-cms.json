@@ -7,7 +7,7 @@
     "link": "https://github.com/mozahzah/IEMidi",
     "tools":
     [
-      "C++", "CMake", "YAML", "rtmidi"
+      "C++", "rtmidi", "CMake", "YAML" 
     ]
   },
   {
@@ -29,7 +29,29 @@
     "link": "https://github.com/mozahzah/IECore",
     "tools":
     [
-      "C++", "CMake", "imgui"
+      "C++", "imgui", "CMake"
+    ]
+  },
+  {
+    "title": "DSPy",
+    "description": "A Python-based educational playground for creating, exploring, and visualizing digital signal processing (DSP) algorithms.",
+    "image": "/Resources/DSPy.png",
+    "zoom": 130,
+    "link": "https://github.com/mozahzah/DSPy",
+    "tools":
+    [
+      "Python", "NumPy", "Matplotlib"
+    ]
+  },
+  {
+    "title": "IEConcurrency",
+    "description": "IE's concurrency library offering various tools and utilities for parallel programming.",
+    "image": "/Resources/IEConcurrency.png",
+    "zoom": 120,
+    "link": "https://github.com/mozahzah/IEConcurrency",
+    "tools":
+    [
+      "C++", "Concurrency", "CMake"
     ]
   },
   {
@@ -40,7 +62,7 @@
     "link": "https://github.com/mozahzah/IEFxRack",
     "tools":
     [
-      "C++", "CMake", "JUCE"
+      "C++", "JUCE", "CMake" 
     ]
   }
 ]
