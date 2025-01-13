@@ -533,6 +533,7 @@ body
   #content-section
   {
     width: 100%;
+    gap: 50px;
   }
 
   .project-text-section
