@@ -33,6 +33,17 @@
     ]
   },
   {
+    "title": "IEConcurrency",
+    "description": "IE's concurrency library offering various tools and utilities for parallel programming.",
+    "image": "/Resources/IEConcurrency.png",
+    "zoom": 120,
+    "link": "https://github.com/mozahzah/IEConcurrency",
+    "tools":
+    [
+      "C++", "Benchmark", "CMake"
+    ]
+  },
+  {
     "title": "DSPy",
     "description": "A Python-based educational playground for creating, exploring, and visualizing digital signal processing (DSP) algorithms.",
     "image": "/Resources/DSPy.png",
@@ -41,17 +52,6 @@
     "tools":
     [
       "Python", "NumPy", "Matplotlib"
-    ]
-  },
-  {
-    "title": "IEConcurrency",
-    "description": "IE's concurrency library offering various tools and utilities for parallel programming.",
-    "image": "/Resources/IEConcurrency.png",
-    "zoom": 120,
-    "link": "https://github.com/mozahzah/IEConcurrency",
-    "tools":
-    [
-      "C++", "Concurrency", "CMake"
     ]
   },
   {
