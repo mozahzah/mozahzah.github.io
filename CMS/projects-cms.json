@@ -34,7 +34,7 @@
   },
   {
     "title": "IEConcurrency",
-    "description": "IE's concurrency library offering various tools and utilities for parallel programming.",
+    "description": "IE's high-performance concurrency library providing modern concurrent data structures and other primitives.",
     "image": "/Resources/IEConcurrency.png",
     "zoom": 120,
     "link": "https://github.com/mozahzah/IEConcurrency",
