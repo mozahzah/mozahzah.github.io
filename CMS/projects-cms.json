@@ -4,7 +4,7 @@
     "description": "IEMidi is a simple, open-source MIDI editor that leverages RtMidi for its MIDI message handling. The editor is designed to map any MIDI message to various actions such as volume control, mute, console commands or opening files. It also includes a MIDI logger for monitoring MIDI messages in real-time.",
     "image": "/Resources/IEMidi.jpg",
     "zoom": 120,
-    "link": "https://github.com/mozahzah/IEMidi",
+    "link": "https://github.com/Interactive-Echoes/IEMidi",
     "tools":
     [
       "C++", "rtmidi", "CMake", "YAML" 
@@ -26,7 +26,7 @@
     "description": "IECore is an open-source library designed for Windows and macOS, leveraging ImGui as its user interface. It serves as the core framework for all applications under the Interactive Echoes (IE) brand, offering a plug-and-play setup with pre-configured entry points, making it simple to start developping C++ applications.",
     "image": "/Resources/IECore.jpg",
     "zoom": 120,
-    "link": "https://github.com/mozahzah/IECore",
+    "link": "https://github.com/Interactive-Echoes/IECore",
     "tools":
     [
       "C++", "imgui", "CMake"
@@ -37,7 +37,7 @@
     "description": "IE's high-performance concurrency library providing modern concurrent data structures and other primitives.",
     "image": "/Resources/IEConcurrency.png",
     "zoom": 120,
-    "link": "https://github.com/mozahzah/IEConcurrency",
+    "link": "https://github.com/Interactive-Echoes/IEConcurrency",
     "tools":
     [
       "C++", "Benchmark", "CMake"
@@ -59,7 +59,7 @@
     "description": "IEFxRack is IE’s cross-platform virtual module FX rack for Windows and macOS. It provides a modular environment for creating and shaping sounds, using the JUCE library as its audio framework.",
     "image": "/Resources/IEFxRack.jpg",
     "zoom": 120,
-    "link": "https://github.com/mozahzah/IEFxRack",
+    "link": "https://github.com/Interactive-Echoes/IEFxRack",
     "tools":
     [
       "C++", "JUCE", "CMake" 
