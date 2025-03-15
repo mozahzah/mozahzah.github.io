@@ -22,17 +22,6 @@
     ]
   },
   {
-    "title": "IECore",
-    "description": "IECore is a cross-platform library for Linux, Windows, and macOS that leverages ImGui as its user interface. It serves as the core framework for all Interactive Echoes (IE) applications, offering a plug-and-play setup with pre-configured entry points, making it simple to start developping C++ applications.",
-    "image": "/Resources/IECore.jpg",
-    "zoom": 120,
-    "link": "https://github.com/Interactive-Echoes/IECore",
-    "tools":
-    [
-      "C++", "imgui", "CMake"
-    ]
-  },
-  {
     "title": "IEConcurrency",
     "description": "IE's high-performance concurrency library providing modern concurrent data structures and other primitives.",
     "image": "/Resources/IEConcurrency.png",
@@ -52,6 +41,17 @@
     "tools":
     [
       "Python", "NumPy", "Matplotlib"
+    ]
+  },
+  {
+    "title": "IECore",
+    "description": "IECore is a cross-platform library for Linux, Windows, and macOS that leverages ImGui as its user interface. It serves as the core framework for all Interactive Echoes (IE) applications, offering a plug-and-play setup with pre-configured entry points, making it simple to start developping C++ applications.",
+    "image": "/Resources/IECore.jpg",
+    "zoom": 120,
+    "link": "https://github.com/Interactive-Echoes/IECore",
+    "tools":
+    [
+      "C++", "imgui", "CMake"
     ]
   },
   {
