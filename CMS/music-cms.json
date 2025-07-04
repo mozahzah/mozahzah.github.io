@@ -39,7 +39,7 @@
     "title": "Cielito Blue",
     "artist": "Marziani",
     "year": "2020",
-    "type": "Album",
+    "type": "album",
     "image": "/Resources/Cover-Arts/cielito-blue.jpg",
     "zoom": 100,
     "link": "https://open.spotify.com/album/05tsg3wqhICSGzBgKPSwWY"
@@ -48,7 +48,7 @@
     "title": "Khaberni Keef",
     "artist": "Khansa",
     "year": "2020",
-    "type": "Single",
+    "type": "single",
     "image": "/Resources/Cover-Arts/khaberni-keef.jpg",
     "zoom": 100,
     "link": "https://www.youtube.com/watch?v=ryAq6ugrf5s"
@@ -57,7 +57,7 @@
     "title": "October 17",
     "artist": "Reya",
     "year": "2019",
-    "type": "Classical",
+    "type": "classical",
     "image": "/Resources/Cover-Arts/october-17.jpg",
     "zoom": 100,
     "link": "https://open.spotify.com/track/25utsBVozWB2xpfga1DNgD"
@@ -66,7 +66,7 @@
     "title": "Sellem 2.1",
     "artist": "Out of Nations ft. Fayrouz Karawya",
     "year": "2018",
-    "type": "Remix",
+    "type": "remix",
     "image": "/Resources/Cover-Arts/sellem-2.1.jpg",
     "zoom": 100,
     "link": "https://www.youtube.com/watch?v=qmxheeijxEs"
@@ -75,7 +75,7 @@
     "title": "To Be Naked",
     "artist": "Michaela de Prince",
     "year": "2018",
-    "type": "Video",
+    "type": "video",
     "image": "/Resources/Cover-Arts/to-be-naked.jpg",
     "zoom": 100,
     "link": "https://www.youtube.com/watch?v=WRm-L17veJ0"
@@ -84,7 +84,7 @@
     "title": "Qesat el Ams",
     "artist": "Khansa x mozahzah",
     "year": "2018",
-    "type": "Single",
+    "type": "single",
     "image": "/Resources/Cover-Arts/qesat-el-ams.jpg",
     "zoom": 100,
     "link": "https://www.youtube.com/watch?v=lf_g5UfAw6M"
@@ -93,7 +93,7 @@
     "title": "Khayef",
     "artist": "Khansa x mozahzah",
     "year": "2018",
-    "type": "Single",
+    "type": "single",
     "image": "/Resources/Cover-Arts/khayef.png",
     "zoom": 100,
     "link": "https://www.youtube.com/watch?v=p1k1YIyrQOY"
@@ -102,7 +102,7 @@
     "title": "Involution",
     "artist": "Martin Loyato",
     "year": "2017",
-    "type": "Album",
+    "type": "album",
     "image": "/Resources/Cover-Arts/involution.jpg",
     "zoom": 100,
     "link": "https://open.spotify.com/album/5vEryj9H4HUqIUInaNrBXE?si=hYfGCyVCQvqXfbzK5_Jx5A"

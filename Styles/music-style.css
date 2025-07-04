@@ -11,7 +11,7 @@ Author: mozahzah
   --secondary-color: #707070;
 
   /* Animation */
-  --animation-time: 0.3s;
+  --animation-time: 0.333s;
 
   /* Colors */
   --red: #E50914;
@@ -44,12 +44,12 @@ h1
 {
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 200;
+  font-weight: 100;
   font-style: normal;
-  letter-spacing: 4px;
+  letter-spacing: 6px;
   padding: 0;
   margin: 0;
-  font-size: 42px;
+  font-size: 40px;
 }
 
 h2
@@ -79,7 +79,8 @@ h3
 p
 {
   margin-top: 0;
-  color: rgb(185, 185, 185);
+  /* color: rgb(185, 185, 185); */
+  color: var(--secondary-color);
 }
 
 
@@ -90,7 +91,7 @@ body
 {
     margin: 0;
     height: 100%;
-    background-color: #111111;
+    background-color: #0f0f0f;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,25 +108,39 @@ body
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 
 /* Content Section */
 
 
-#page-title
+#page-title-section
 {
   padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#page-sub-title
+{
+  letter-spacing: 6px;
+  font-size: 20px;
 }
 
 #music-section
 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 100vw;
+  width: 90%;
   margin: 0;
   padding: 0;
   padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  transform-style: preserve-3d;
 }
 
 .music-container 
@@ -134,25 +149,24 @@ body
   padding: 0% 0% 0% 0%;
   transition: all var(--animation-time) ease;
   width: 100%;
-  aspect-ratio: 1 / 1; /* Makes the div a perfect square */
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   box-sizing: border-box;
-  border:rgba(255, 0, 0, 0.25);
+  border:rgba(255, 255, 255, 0.25);
   border-style: solid;
-  border-width: 1px;
+  border-width: 0px;
 }
 
 .music-container:hover 
 {
-  transform: scale(1.1);
+  transform: scale(1.1) translateZ(100px);
   border-radius: var(--border-radius);
-  z-index: 100;
-  .music-image-wrapper
-  {
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    opacity: 10%;
-  }
+  cursor: pointer;
+}
+
+.music-container:hover .music-image-wrapper 
+{
+  opacity: 0.05; 
 }
 
 .music-image-wrapper
@@ -164,7 +178,7 @@ body
   height: 100%;
   overflow: hidden;
   transition: all var(--animation-time) ease;
-  z-index: 10;
+  z-index: 1;
 }
 
 .music-image-wrapper img 
