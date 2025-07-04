@@ -31,8 +31,10 @@ function loadmusicJsonFile()
                 <div class="music-text-section">
                     <h2 class="music-title">${musicItem.title}</h2>
                     <h3 class="music-artist">${musicItem.artist}</h3>
-                    <p class="music-year">${musicItem.year}</p>
-                    <p class="music-type">${musicItem.type}</p>
+                    <div class="music-info">
+                        <p class="music-type">${musicItem.type}</p>
+                        <p class="music-year">${musicItem.year}</p>
+                    </div>
                 </div>
             </div>
             `;
