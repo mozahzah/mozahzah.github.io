@@ -1,18 +1,110 @@
 [
   {
-    "title": "Khayef",
-    "artist": "mozahzah x Khansa",
-    "description": "description",
-    "image": "/Resources/IEMidi.jpg",
-    "zoom": 120,
-    "link": "https://github.com/Interactive-Echoes/IEMidi"
+    "title": "Exodus",
+    "artist": "BASTN",
+    "year": "2022",
+    "type": "single",
+    "image": "/Resources/Cover-Arts/exodus.png",
+    "zoom": 100,
+    "link": "https://www.youtube.com/embed/yGnzzBX34JU"
+  },
+  {
+    "title": "Shamsak",
+    "artist": "Eden Zane",
+    "year": "2022",
+    "type": "single",
+    "image": "/Resources/Cover-Arts/shamsak.jpeg",
+    "zoom": 100,
+    "link": "https://www.youtube.com/embed/3__8N5KGESU"
+  },
+  {
+    "title": "Mehlawi (Remix)",
+    "artist": "Abboud",
+    "year": "2022",
+    "type": "remix",
+    "image": "/Resources/Cover-Arts/mehlawi.jpg",
+    "zoom": 100,
+    "link": "https://www.youtube.com/watch?v=OEIP05LQlq8"
+  },
+  {
+    "title": "Catharsis",
+    "artist": "Venus Bleeds",
+    "year": "2021",
+    "type": "EP",
+    "image": "/Resources/Cover-Arts/catharsis.jpg",
+    "zoom": 100,
+    "link": "https://www.youtube.com/watch?v=Fthj3aYabGI&list=PLlFAmul1jGTWVLbeHD8QkuoNGJ1i1NQ79"
+  },
+  {
+    "title": "Cielito Blue",
+    "artist": "Marziani",
+    "year": "2020",
+    "type": "Album",
+    "image": "/Resources/Cover-Arts/cielito-blue.jpg",
+    "zoom": 100,
+    "link": "https://open.spotify.com/album/05tsg3wqhICSGzBgKPSwWY"
   },
   {
     "title": "Khaberni Keef",
     "artist": "Khansa",
-    "description": "description",
-    "image": "/Resources/IECore.jpg",
-    "zoom": 120,
-    "link": "https://github.com/Interactive-Echoes/IEMidi"
+    "year": "2020",
+    "type": "Single",
+    "image": "/Resources/Cover-Arts/khaberni-keef.jpg",
+    "zoom": 100,
+    "link": "https://www.youtube.com/watch?v=ryAq6ugrf5s"
+  },
+  {
+    "title": "October 17",
+    "artist": "Reya",
+    "year": "2019",
+    "type": "Classical",
+    "image": "/Resources/Cover-Arts/october-17.jpg",
+    "zoom": 100,
+    "link": "https://open.spotify.com/track/25utsBVozWB2xpfga1DNgD"
+  },
+  {
+    "title": "Sellem 2.1",
+    "artist": "Out of Nations ft. Fayrouz Karawya",
+    "year": "2018",
+    "type": "Remix",
+    "image": "/Resources/Cover-Arts/sellem-2.1.jpg",
+    "zoom": 100,
+    "link": "https://www.youtube.com/watch?v=qmxheeijxEs"
+  },
+  {
+    "title": "To Be Naked",
+    "artist": "Michaela de Prince",
+    "year": "2018",
+    "type": "Video",
+    "image": "/Resources/Cover-Arts/to-be-naked.jpg",
+    "zoom": 100,
+    "link": "https://www.youtube.com/watch?v=WRm-L17veJ0"
+  },
+  {
+    "title": "Qesat el Ams",
+    "artist": "Khansa x mozahzah",
+    "year": "2018",
+    "type": "Single",
+    "image": "/Resources/Cover-Arts/qesat-el-ams.jpg",
+    "zoom": 100,
+    "link": "https://www.youtube.com/watch?v=lf_g5UfAw6M"
+  },
+  {
+    "title": "Khayef",
+    "artist": "Khansa x mozahzah",
+    "year": "2018",
+    "type": "Single",
+    "image": "/Resources/Cover-Arts/khayef.png",
+    "zoom": 100,
+    "link": "https://www.youtube.com/watch?v=p1k1YIyrQOY"
+  },
+  {
+    "title": "Involution",
+    "artist": "Martin Loyato",
+    "year": "2017",
+    "type": "Album",
+    "image": "/Resources/Cover-Arts/involution.jpg",
+    "zoom": 100,
+    "link": "https://open.spotify.com/album/5vEryj9H4HUqIUInaNrBXE?si=hYfGCyVCQvqXfbzK5_Jx5A"
   }
 ]

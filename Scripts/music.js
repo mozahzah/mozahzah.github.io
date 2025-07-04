@@ -24,14 +24,15 @@ function loadmusicJsonFile()
         data.forEach(musicItem => 
         {
             portfolioBody.innerHTML += `
-            <div class="music-container">
-                <div class="music-image-wrapper" onclick="window.open('${musicItem.link}', '_blank')">
+            <div class="music-container" onclick="window.open('${musicItem.link}', '_blank')">
+                <div class="music-image-wrapper">
                     <img src="../CMS/${musicItem.image}" class="music-image" style="width: ${musicItem.zoom}%"></img>
                 </div>
                 <div class="music-text-section">
-                    <h3 class="music-title">${musicItem.title}</h3>
-                    <h4 class="music-artist">${musicItem.artist}</h4>
-                    <p class="music-description">${musicItem.description}</p>
+                    <h2 class="music-title">${musicItem.title}</h2>
+                    <h3 class="music-artist">${musicItem.artist}</h3>
+                    <p class="music-year">${musicItem.year}</p>
+                    <p class="music-type">${musicItem.type}</p>
                 </div>
             </div>
             `;
