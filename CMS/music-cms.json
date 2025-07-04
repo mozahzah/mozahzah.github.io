@@ -1,12 +1,12 @@
 [
   {
     "title": "Exodus",
-    "artist": "BASTN",
+    "artist": "Bastian Brooklyn",
     "year": "2022",
     "type": "single",
     "image": "/Resources/Cover-Arts/exodus.png",
     "zoom": 100,
-    "link": "https://www.youtube.com/embed/yGnzzBX34JU"
+    "link": "https://youtu.be/yGnzzBX34JU?si=crzDzLv_z9dlDjnS"
   },
   {
     "title": "Shamsak",
@@ -15,7 +15,7 @@
     "type": "single",
     "image": "/Resources/Cover-Arts/shamsak.jpeg",
     "zoom": 100,
-    "link": "https://www.youtube.com/embed/3__8N5KGESU"
+    "link": "https://www.youtube.com/watch?v=3__8N5KGESU"
   },
   {
     "title": "Mehlawi (Remix)",
