@@ -1,0 +1,260 @@
+/* 
+SPDX-License-Identifier: GPL-2.0-only
+Copyright © mozahzah. All rights reserved.
+Author: mozahzah 
+*/
+
+:root 
+{
+  /* Colors */
+  --primary-font-color: #e0e0e0;
+  --secondary-color: #707070;
+
+  /* Animation */
+  --animation-time: 0.3s;
+
+  /* Colors */
+  --red: #E50914;
+
+  /* Fx */
+  --white-box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  --border-radius: 20px;
+}
+
+* /* Global */
+{
+    font-family: "Assistant", sans-serif;
+    font-optical-sizing: none;
+    font-weight: 200;
+    font-style: normal;
+    letter-spacing: 0.8px;
+    line-height: 1.5;
+    font-size: 14px;
+    color: var(--primary-font-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    scroll-behavior: smooth;
+}
+
+
+/* Headers */
+
+
+h1
+{
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 2px;
+  padding: 0;
+  margin: 0;
+  font-size: 44px;
+}
+
+h2
+{
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  color: var(--secondary-color);
+  font-weight: 200;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  font-size: 26px;
+}
+
+h3
+{
+  font-family: "Assistant", sans-serif;
+  font-optical-sizing: auto;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  font-size: 26px;
+}
+
+p
+{
+  margin-top: 0;
+  color: rgb(185, 185, 185);
+}
+
+
+/* Body and Background */
+
+
+body 
+{
+    margin: 0;
+    height: 100%;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Content */
+
+
+#main-section
+{
+  padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Content Section */
+
+
+#music-section
+{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.music-container 
+{
+  position: relative;
+  padding: 0% 0% 0% 0%;
+  transition: all var(--animation-time) ease;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Makes the div a perfect square */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.music-container:hover 
+{
+  transform: scale(1.1);
+  border-radius: var(--border-radius);
+  z-index: 100;
+  .music-image-wrapper
+  {
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    opacity: 10%;
+  }
+}
+
+.music-image-wrapper
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: all var(--animation-time) ease;
+  border:rgb(0, 0, 0);
+  border-style: solid;
+  border-width: 1px;
+  z-index: 10;
+}
+
+.music-image-wrapper img 
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--animation-time) ease;
+  top: 0;
+  left: 0;
+}
+
+.music-text-section
+{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(10, 10, 10);
+  border:rgb(0, 0, 0);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--border-radius);
+}
+
+.music-title
+{
+  margin-top: 5%;
+  margin-bottom: 2%;
+  font-size: 22px;
+}
+
+
+/* Footer */
+
+
+.footer
+{
+  height: 200px;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  padding-right: 5%;
+  padding-bottom: 5%;
+}
+
+
+/* Responsiveness */
+
+
+@media screen and (max-width: 900px) 
+{
+  *
+  {
+    font-size: 12px;
+  }
+
+  h1
+  {
+    font-size: 40px;
+  }
+
+  h2
+  {
+    font-size: 22px;
+  }
+
+  h3
+  {
+    font-size: 22px;
+  }
+
+  #main-section
+  {
+    padding-left: 3%;
+    padding-right: 3%;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  #music-section
+  {
+    width: 100%;
+    gap: 50px;
+  }
+
+  .music-text-section
+  {
+    padding-left: 4%;
+  }
+
+  .footer
+  {
+    height: 100px;
+  }
+}

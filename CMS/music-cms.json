@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Khayef",
+    "artist": "mozahzah x Khansa",
+    "description": "description",
+    "image": "/Resources/IEMidi.jpg",
+    "zoom": 120,
+    "link": "https://github.com/Interactive-Echoes/IEMidi"
+  },
+  {
+    "title": "Khaberni Keef",
+    "artist": "Khansa",
+    "description": "description",
+    "image": "/Resources/IECore.jpg",
+    "zoom": 120,
+    "link": "https://github.com/Interactive-Echoes/IEMidi"
+  }
+]
