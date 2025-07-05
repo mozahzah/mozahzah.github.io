@@ -24,7 +24,7 @@ function loadmusicJsonFile()
         data.forEach(musicItem => 
         {
             portfolioBody.innerHTML += `
-            <div class="music-container" onclick="window.open('${musicItem.link}', '_blank')">
+            <div class="music-container" data-link='${musicItem.link}'">
                 <div class="music-image-wrapper">
                     <img src="../CMS/${musicItem.image}" class="music-image" style="width: ${musicItem.zoom}%"></img>
                 </div>
@@ -42,3 +42,34 @@ function loadmusicJsonFile()
     }
 }
 loadmusicJsonFile();
+
+let lastClicked = null;
+
+document.querySelectorAll('.music-container').forEach((el) => 
+{
+    const link = el.dataset.link;
+    el.onclick = (event) => 
+    {
+        if (window.innerWidth > 900) 
+        {
+            window.open(link, '_blank');
+        }
+        else 
+        {
+            if (el == lastClicked && el.matches(":hover"))
+            {
+                window.open(link, '_blank');
+            }
+            lastClicked = el;
+        }
+    };
+});
+
+document.addEventListener('click', (e) => 
+{
+    const clickedEl = e.target.closest('.music-container');
+    if (!clickedEl && lastClicked) 
+    {
+        lastClicked = null;
+    }
+});

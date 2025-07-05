@@ -134,7 +134,7 @@ body
 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 90%;
+  width: 95%;
   margin: 0;
   padding: 0;
   padding-top: 5%;
@@ -221,7 +221,7 @@ body
 
 .footer
 {
-  height: 100px;
+  height: 50px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -236,9 +236,16 @@ body
 
 @media screen and (max-width: 900px) 
 {
+  :root 
+  {
+    /* Colors */
+    --secondary-color: #e0e0e0;
+  }
+
   *
   {
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 300;
   }
 
   h1
@@ -274,11 +281,16 @@ body
     padding-top: 5%;
   }
 
+  .music-container:hover 
+  {
+    transform: initial;
+    border-radius: initial;
+    cursor: initial;
+  }
+
   .footer
   {
-    display: flex;
-    flex-direction: row;
-    align-items: end;
     height: 50px;
+    padding-right: 2%;
   }
 }
