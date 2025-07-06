@@ -28,6 +28,7 @@ Author: mozahzah
     font-weight: 200;
     font-style: normal;
     letter-spacing: 0.8px;
+    text-align: center;
     line-height: 1.5;
     font-size: 14px;
     color: var(--primary-font-color);
