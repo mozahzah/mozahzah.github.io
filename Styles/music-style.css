@@ -206,12 +206,19 @@ body
 
 .music-title
 {
+  width: 90%;
   margin-top: 5%;
   font-size: 22px;
 }
 
+.music-artist
+{
+  width: 90%;
+}
+
 .music-info
 {
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
