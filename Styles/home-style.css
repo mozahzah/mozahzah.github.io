@@ -7,7 +7,7 @@ Author: mozahzah
 :root 
 {
   /* Colors */
-  --primary-font-color: #e0e0e0;
+  --primary-font-color: rgb(235,235,235);
   --secondary-color: #707070;
 
   /* Animation */
