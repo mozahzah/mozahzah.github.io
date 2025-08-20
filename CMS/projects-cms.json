@@ -2,12 +2,12 @@
   {
     "title": "IEMidi",
     "description": "IEMidi is a cross-platform MIDI editor that leverages RtMidi for its MIDI message handling. The editor is designed to map any MIDI message to various actions such as volume control, mute, console commands or opening files. It also includes a MIDI logger for monitoring MIDI messages in real-time.",
-    "image": "/Resources/IEMidi.jpg",
+    "image": "/Resources/IEMidi-2.jpg",
     "zoom": 120,
     "link": "https://github.com/Interactive-Echoes/IEMidi",
     "tools":
     [
-      "C++", "rtmidi", "CMake", "YAML" 
+      "C++", "rtmidi", "Qt", "YAML" 
     ]
   },
   {
