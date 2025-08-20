@@ -3,7 +3,7 @@
     "title": "IEMidi",
     "description": "IEMidi is a cross-platform MIDI editor that leverages RtMidi for its MIDI message handling. The editor is designed to map any MIDI message to various actions such as volume control, mute, console commands or opening files. It also includes a MIDI logger for monitoring MIDI messages in real-time.",
     "image": "/Resources/IEMidi-2.png",
-    "zoom": 120,
+    "zoom": 135,
     "link": "https://github.com/Interactive-Echoes/IEMidi",
     "tools":
     [
@@ -25,7 +25,7 @@
     "title": "IEConcurrency",
     "description": "IE's high-performance concurrency library providing modern concurrent data structures and other primitives.",
     "image": "/Resources/IEConcurrency.png",
-    "zoom": 120,
+    "zoom": 135,
     "link": "https://github.com/Interactive-Echoes/IEConcurrency",
     "tools":
     [
