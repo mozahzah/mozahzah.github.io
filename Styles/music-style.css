@@ -7,7 +7,7 @@ Author: mozahzah
 :root 
 {
   /* Colors */
-  --primary-font-color: rgb(240,240,240);
+  --primary-font-color: rgb(230,230,230);
   --secondary-color: #707070;
 
   /* Animation */
@@ -23,9 +23,9 @@ Author: mozahzah
 
 * /* Global */
 {
-    font-family: "Assistant", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-optical-sizing: none;
-    font-weight: 200;
+    font-weight: 400;
     font-style: normal;
     letter-spacing: 0.8px;
     text-align: center;
@@ -67,7 +67,7 @@ h2
 
 h3
 {
-  font-family: "Assistant", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   color: var(--secondary-color);
   font-weight: 100;
