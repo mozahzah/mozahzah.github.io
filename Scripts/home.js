@@ -48,13 +48,14 @@ document.addEventListener('DOMContentLoaded', function ()
     {
         loader.classList.add('hidden');
         document.body.style.overflow = 'visible';
+        if (iframe)
+        {
+            iframe.style.display = 'none';
+        }
+        
         if (player.getPaused())
         {
             player.pause();
-            if (iframe)
-            {
-                iframe.style.display = 'none';
-            }
         }
     }, TIMEOUT_DURATION); 
 
@@ -78,7 +79,7 @@ function setupDesktop()
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
       
-            const targetPosition = targetElement.offsetTop - 115;
+            const targetPosition = targetElement.offsetTop - 90;
       
             window.scrollTo(
             {
@@ -205,10 +206,9 @@ function loadProjectsJsonFile()
             toolsDiv += '</div>';
 
             portfolioBody.innerHTML += `
-            <div class="project-container">
-                <div class="project-image-wrapper" onclick="window.open('${projectItem.link}', '_blank')">
-                    <a class="arrow">→</a>
-                    <img src="../CMS/${projectItem.image}" class="project-image" style="width: ${projectItem.zoom}%"></img>
+            <div class="project-container" onclick="window.open('${projectItem.link}', '_blank')">
+                <div class="project-image-wrapper">
+                    <img src="../CMS/${projectItem.image}" class="project-image"></img>
                 </div>
                 <div class="project-text-section">
                     <h3 class="project-title">${projectItem.title}</h3>
@@ -232,12 +232,14 @@ function loadProjectsJsonFile()
                     projectItem.style.flexDirection = "row-reverse";
                     imageWrapper.classList.add("add-right-border-radius");
                     textSection.classList.add("add-left-border-radius");
+                    textSection.style.right = "30%";
                 }
                 else
                 {
                     projectItem.style.flexDirection = "row";
                     imageWrapper.classList.add("add-left-border-radius");
                     textSection.classList.add("add-right-border-radius");
+                    textSection.style.left = "30%";
                 }
             }
         }

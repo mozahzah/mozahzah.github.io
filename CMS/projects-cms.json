@@ -42,27 +42,5 @@
     [
       "Python", "NumPy", "Matplotlib"
     ]
-  },
-  {
-    "title": "IECore",
-    "description": "IECore is a cross-platform library for Linux, Windows, and macOS that leverages ImGui as its user interface. It serves as the core framework for all Interactive Echoes (IE) applications, offering a plug-and-play setup with pre-configured entry points, making it simple to start developping C++ applications.",
-    "image": "/Resources/IECore.jpg",
-    "zoom": 120,
-    "link": "https://github.com/Interactive-Echoes/IECore",
-    "tools":
-    [
-      "C++", "imgui", "CMake"
-    ]
-  },
-  {
-    "title": "IEFxRack (Work in Progress)",
-    "description": "IEFxRack is IE’s cross-platform virtual module FX rack for Windows and macOS. It provides a modular environment for creating and shaping sounds, using the JUCE library as its audio framework.",
-    "image": "/Resources/IEFxRack.jpg",
-    "zoom": 120,
-    "link": "https://github.com/Interactive-Echoes/IEFxRack",
-    "tools":
-    [
-      "C++", "JUCE", "CMake" 
-    ]
   }
 ]
