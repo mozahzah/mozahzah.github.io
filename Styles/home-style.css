@@ -323,7 +323,7 @@ hr
   transition: all var(--animation-time) ease;
   border:rgb(0, 0, 0);
   border-style: solid;
-  border-width: 1px;
+  border-width: 0px;
 }
 
 .project-image-wrapper img 
