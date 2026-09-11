@@ -23,7 +23,7 @@
   },
   {
     "title": "IEConcurrency",
-    "description": "IE's high-performance concurrency library providing modern concurrent data structures and other primitives.",
+    "description": "IE's high-performance concurrency library providing modern concurrent data structures and other synchronization objects.",
     "image": "/Resources/IEConcurrency.png",
     "zoom": 135,
     "link": "https://github.com/Interactive-Echoes/IEConcurrency",
