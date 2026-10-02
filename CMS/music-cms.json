@@ -1,5 +1,14 @@
 [
   {
+    "title": "Pipes",
+    "artist": "Karim Kassem",
+    "year": "2022",
+    "type": "film",
+    "image": "/Resources/Cover-Arts/pipes.jpg",
+    "zoom": 100,
+    "link": "https://www.youtube.com/playlist?list=PLHTh6Uc19Ukk"
+  },
+  {
     "title": "Exodus",
     "artist": "Bastian Brooklyn",
     "year": "2022",
