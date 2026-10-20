@@ -5,9 +5,11 @@
     "image": "/Resources/IEMidi-2.png",
     "zoom": 135,
     "link": "https://github.com/Interactive-Echoes/IEMidi",
-    "tools":
-    [
-      "C++", "rtmidi", "Qt", "YAML" 
+    "tools": [
+      "C++",
+      "rtmidi",
+      "Qt",
+      "YAML"
     ]
   },
   {
@@ -16,9 +18,10 @@
     "image": "/Resources/3D-Audio-Gameplay.png",
     "zoom": 150,
     "link": "https://vimeo.com/showcase/11491529?share=copy",
-    "tools":
-    [
-      "C++", "UE5", "Linear Algebra"
+    "tools": [
+      "C++",
+      "UE5",
+      "Linear Algebra"
     ]
   },
   {
@@ -27,9 +30,10 @@
     "image": "/Resources/IEConcurrency.png",
     "zoom": 135,
     "link": "https://github.com/Interactive-Echoes/IEConcurrency",
-    "tools":
-    [
-      "C++", "Benchmark", "CMake"
+    "tools": [
+      "C++",
+      "Benchmark",
+      "CMake"
     ]
   },
   {
@@ -38,9 +42,10 @@
     "image": "/Resources/DSPy.png",
     "zoom": 130,
     "link": "https://github.com/mozahzah/DSPy",
-    "tools":
-    [
-      "Python", "NumPy", "Matplotlib"
+    "tools": [
+      "Python",
+      "NumPy",
+      "Matplotlib"
     ]
   }
 ]
